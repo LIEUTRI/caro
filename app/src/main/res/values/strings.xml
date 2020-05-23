@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Caro</string>
+    <string name="play">CHƠI ONLINE</string>
+    <string name="playoffline">CHƠI VỚI MÁY</string>
+    <string name="setting">CÀI ĐẶT</string>
+    <string name="serverip">IP SERVER / PORT:</string>
+    <string name="change">OK</string>
+    <string name="roomid">ID phòng:</string>
+    <string name="roomstatus"> người trong phòng</string>
+    <string name="playagain">CHƠI TIẾP</string>
+    <string name="exit">THOÁT</string>
+    <string name="turn">Đến lượt của </string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    tools:context=".GameoverActivity"
+    android:background="#fff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GAMEOVER"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/darker_gray"
+        android:id="@+id/textViewTitle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewGameStatus"
+        android:text="..."
+        android:layout_below="@+id/textViewTitle"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLAY AGAIN"
+            android:textColor="@android:color/holo_blue_light"
+            android:id="@+id/buttonPlayagain" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLOSE"
+            android:id="@+id/buttonClose" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXIT"
+            android:textColor="@android:color/holo_red_light"
+            android:id="@+id/buttonExit"
+            android:layout_gravity="center_horizontal"/>
+    </TableLayout>
+
+</RelativeLayout>

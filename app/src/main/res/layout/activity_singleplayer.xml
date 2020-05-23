@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingleplayerActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <com.liutri.caro.AI
+            android:id="@+id/imageViewAI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageButton
+        android:id="@+id/buttonUndo"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@+id/buttonReset"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/undo" />
+
+    <ImageButton
+        android:id="@+id/buttonRedo"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@+id/buttonUndo"
+        android:src="@drawable/redo"/>
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK TO MAIN"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

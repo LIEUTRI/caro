@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSingleplayer"
+            android:theme="@style/AppTheme.Button"
+            android:text="@string/playoffline"/>
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMultiplayer"
+            android:theme="@style/AppTheme.Button"
+            android:text="@string/play"/>
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSetting"
+            android:theme="@style/AppTheme.Button"
+            android:text="@string/setting"/>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIÊN LUẬN - CNTT"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/textViewDeTai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đề tài: PHÁT TRIỂN TRÒ CHƠI CỜ CARO SỬ DỤNG SOCKET TRÊN ANDROID"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@+id/textViewTitle"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giảng viên hướng dẫn:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@+id/textViewDeTai"
+        android:textColor="@android:color/darker_gray"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/textViewGV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRẦN CÔNG ÁN"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView"
+        android:textColor="#344ceb"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/textSVTH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sinh viên thực hiện:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:id="@+id/textSV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIỄU MINH TRÍ - B1610701"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#344ceb"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Học kỳ 2 - Năm học: 2019-2020"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+    </TableLayout>
+
+</RelativeLayout>
