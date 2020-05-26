@@ -38,6 +38,7 @@ public class AI extends AppCompatImageView {
     private int row;
     private int cellSize;
     private Paint blackPaint = new Paint();
+    private Paint paint = new Paint();
     private Bitmap bitmapX;
     private Bitmap bitmapO;
     private Cell[][] cells;
@@ -49,6 +50,8 @@ public class AI extends AppCompatImageView {
     public int MIN_INT = Integer.MIN_VALUE;
     private ImageButton btnUndo;
     private ImageButton btnRedo;
+    private int currentRow = -1;
+    private int currentCol = -1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public AI(Context context, AttributeSet attrs) {
@@ -102,6 +105,8 @@ public class AI extends AppCompatImageView {
         int c = ThreadLocalRandom.current().nextInt(4, 7 + 1);
         stackMoves.add(new Cell(r,c,c*cellSize,r*cellSize,1,""));
         cells[r][c].setOwner(1);
+        currentRow = r;
+        currentCol = c;
     }
 
     @Override
@@ -124,6 +129,15 @@ public class AI extends AppCompatImageView {
 
         for (int i = 0; i <= numRows; i++) {
             canvas.drawLine(0, i * cellSize, width, i * cellSize, blackPaint);
+        }
+
+        if (currentRow != -1){
+            paint.setColor(Color.GREEN);
+            paint.setStrokeWidth(5);
+            paint.setStyle(Paint.Style.STROKE);
+            int x = cells[currentRow][currentCol].getX();
+            int y = cells[currentRow][currentCol].getY();
+            canvas.drawRect(x, y, x+cellSize, y+cellSize, paint);
         }
 
         btnUndo = activity.findViewById(R.id.buttonUndo);
@@ -194,6 +208,8 @@ public class AI extends AppCompatImageView {
                 return false;
             if (cells[row][column].getOwner() == 0 && curPlayer==2) {
                 cells[row][column].setOwner(2);
+                currentRow = row;
+                currentCol = column;
                 Cell c = new Cell(row,column,column*cellSize,row*cellSize,2,"");
                 stackMoves.add(c);
                 invalidate();
@@ -202,6 +218,8 @@ public class AI extends AppCompatImageView {
                     Move move = findBestMove(cells);
                     System.out.printf("ROW: %d COL: %d\n\n", move.row, move.col);
                     cells[move.row][move.col].setOwner(1);
+                    currentRow = move.row;
+                    currentCol = move.col;
                     c = new Cell(move.row,move.col,move.col*cellSize,move.row*cellSize,1,"");
                     stackMoves.add(c);
                     invalidate();

@@ -37,6 +37,7 @@ public class Board extends AppCompatImageView {
     private int cellSize;
     private int numColumns, numRows;
     private Paint blackPaint = new Paint();
+    private Paint paint = new Paint();
     private Bitmap bitmapX;
     private Bitmap bitmapO;
     private Cell[][] cells;
@@ -48,6 +49,8 @@ public class Board extends AppCompatImageView {
     private boolean gameStarted = false;
     static Cell cellOUT;
     Boolean Joined=false;
+    private int currentRow = -1;
+    private int currentCol = -1;
 
     public Activity currentActivity;
     TextView txt;
@@ -135,6 +138,15 @@ public class Board extends AppCompatImageView {
 
         for (int i = 0; i <= numRows; i++) {
             canvas.drawLine(0, i * cellSize, width, i * cellSize, blackPaint);
+        }
+
+        if (currentRow != -1){
+            paint.setColor(Color.GREEN);
+            paint.setStrokeWidth(5);
+            paint.setStyle(Paint.Style.STROKE);
+            int x = cells[currentRow][currentCol].getX();
+            int y = cells[currentRow][currentCol].getY();
+            canvas.drawRect(x, y, x+cellSize, y+cellSize, paint);
         }
 
         switch (checkWin()){
@@ -252,6 +264,10 @@ public class Board extends AppCompatImageView {
                 cells[row][column].setY(row*cellSize);
                 cells[row][column].setRoom(ROOMID);
                 cellOUT = cells[row][column];
+
+                currentRow = row;
+                currentCol = column;
+
                 textViewTurn = currentActivity.findViewById(R.id.textViewTurn);
                 textViewTurn.setText("Đến lượt đối thủ");
                 if (curPlayer == 1) textViewTurn.setTextColor(Color.RED);
@@ -297,7 +313,11 @@ public class Board extends AppCompatImageView {
         protected void onProgressUpdate(Cell... values) {
             super.onProgressUpdate(values);
 
-            cells[values[0].getRow()][values[0].getCol()].setOwner(values[0].getOwner());
+            int r = values[0].getRow();
+            int c = values[0].getCol();
+            cells[r][c].setOwner(values[0].getOwner());
+            currentRow = r;
+            currentCol = c;
             System.out.println(values[0].getRow()+","+values[0].getCol()+"|"+values[0].getOwner());
             textViewTurn = currentActivity.findViewById(R.id.textViewTurn);
             System.out.println(curPlayer+" | "+values[0].getOwner());
