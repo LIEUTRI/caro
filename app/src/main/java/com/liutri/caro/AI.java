@@ -158,6 +158,8 @@ public class AI extends AppCompatImageView {
                 c = stackMoves.pop();
                 cells[c.getRow()][c.getCol()].setOwner(0);
                 stackUndos.add(c);
+                currentRow = stackMoves.elementAt(stackMoves.size()-1).getRow();
+                currentCol = stackMoves.elementAt(stackMoves.size()-1).getCol();
                 invalidate();
                 ready = true;
             }
@@ -172,6 +174,8 @@ public class AI extends AppCompatImageView {
                 c = stackUndos.pop();
                 cells[c.getRow()][c.getCol()].setOwner(1);
                 stackMoves.add(c);
+                currentRow = c.getRow();
+                currentCol = c.getCol();
                 invalidate();
                 ready = true;
             }
